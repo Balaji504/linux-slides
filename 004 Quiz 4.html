@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>004 Quiz 4</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 5, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 727478, "assessment_type": "multiple-choice", "created": "2015-10-27T13:13:54Z", "prompt": {"answers": ["?", ".", "-", "&amp;"], "feedbacks": ["", "", "", ""], "question": "<p>What character do you use at the end of the command line to start a command in the background?</p>", "relatedLectureIds": ""}, "correct_response": ["d"], "updated": "2016-04-18T23:47:52Z", "section": "", "question_plain": "What character do you use at the end of the command line to start a command in the background?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727482, "assessment_type": "multiple-choice", "created": "2015-10-27T13:14:18Z", "prompt": {"answers": ["terminate", "TERM", "kill", "stop"], "feedbacks": ["", "", "", ""], "question": "<p>What command can you use to stop a running process?</p>", "relatedLectureIds": ""}, "correct_response": ["c"], "updated": "2015-10-27T13:14:18Z", "section": "", "question_plain": "What command can you use to stop a running process?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727484, "assessment_type": "multiple-choice", "created": "2015-10-27T13:15:07Z", "prompt": {"answers": ["True", "False"], "feedbacks": ["", ""], "question": "<p>The <strong>su</strong> command allows you to switch to another user on a Linux system.<span></span></p>", "relatedLectureIds": ""}, "correct_response": ["a"], "updated": "2015-10-27T13:15:07Z", "section": "", "question_plain": "The su command allows you to switch to another user on a Linux system.", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727486, "assessment_type": "multiple-choice", "created": "2015-10-27T13:15:27Z", "prompt": {"answers": ["True", "False"], "feedbacks": ["", ""], "question": "<p>The Debian and RedHat Enterprise Linux distributions use the same package format.</p>", "relatedLectureIds": ""}, "correct_response": ["b"], "updated": "2015-10-27T13:15:27Z", "section": "", "question_plain": "The Debian and RedHat Enterprise Linux distributions use the same package format.", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 797734, "assessment_type": "multiple-choice", "created": "2016-01-08T14:22:34Z", "prompt": {"answers": ["<p>ps</p>", "<p>procs</p>", "<p>processes</p>", "<p>pid</p>"], "feedbacks": ["", "", "", ""], "question": "<p>What command displays the processes that are currently running on a Linux system?</p>", "relatedLectureIds": ""}, "correct_response": ["a"], "updated": "2016-06-01T15:03:19Z", "section": "", "question_plain": "What command displays the processes that are currently running on a Linux system?", "related_lectures": [], "original_assessment_id": 0}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>

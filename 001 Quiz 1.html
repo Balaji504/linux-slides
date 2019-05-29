@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>001 Quiz 1</title>
+    </head>
+    <body>
+
+        <div style="background-color:#ffffaa" align = "center">
+            <script>
+                var c = '';
+                var opt = '';
+                var n = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j']
+
+                var quiz = {"count": 10, "next": null, "previous": null, "results": [{"_class": "assessment", "id": 727426, "assessment_type": "multiple-choice", "created": "2015-10-27T12:53:28Z", "prompt": {"question": "A Linux distribution is comprised of the Linux kernel and additional software.", "feedbacks": ["", ""], "answers": ["True", "False"], "relatedLectureIds": ""}, "correct_response": ["a"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "A Linux distribution is comprised of the Linux kernel and additional software.", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727430, "assessment_type": "multiple-choice", "created": "2015-10-27T12:54:05Z", "prompt": {"question": "<p>Linux only runs on one specific hardware platform.</p>", "feedbacks": ["", ""], "answers": ["True", "False"], "relatedLectureIds": ""}, "correct_response": ["b"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "Linux only runs on one specific hardware platform.", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727432, "assessment_type": "multiple-choice", "created": "2015-10-27T12:54:34Z", "prompt": {"question": "<p>Where are log files typically found on a Linux system?</p>", "feedbacks": ["", "", "", ""], "answers": ["/etc/logs", "/usr/logs", "/var/logs", "/home/logs"], "relatedLectureIds": ""}, "correct_response": ["c"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "Where are log files typically found on a Linux system?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727434, "assessment_type": "multiple-choice", "created": "2015-10-27T12:55:04Z", "prompt": {"question": "<p>What directory would you expect to find user home directories?</p>", "feedbacks": ["", "", "", ""], "answers": ["/usr/local", "/etc/home", "/var/home", "/home"], "relatedLectureIds": ""}, "correct_response": ["d"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "What directory would you expect to find user home directories?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727440, "assessment_type": "multiple-choice", "created": "2015-10-27T13:00:23Z", "prompt": {"question": "<p>Shell prompts look the same on every Linux system.</p>", "feedbacks": ["", ""], "answers": ["True", "False"], "relatedLectureIds": ""}, "correct_response": ["b"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "Shell prompts look the same on every Linux system.", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727442, "assessment_type": "multiple-choice", "created": "2015-10-27T13:02:09Z", "prompt": {"question": "<p>Which account is also known as the superuser account?</p>", "feedbacks": ["", "", "", "", ""], "answers": ["admin", "administrator", "root", "linux", "ubuntu"], "relatedLectureIds": ""}, "correct_response": ["c"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "Which account is also known as the superuser account?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727446, "assessment_type": "multiple-choice", "created": "2015-10-27T13:02:46Z", "prompt": {"question": "<p>The command \"type\" displays the contents of files.</p>", "feedbacks": ["", ""], "answers": ["True", "False"], "relatedLectureIds": ""}, "correct_response": ["b"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "The command \"type\" displays the contents of files.", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727448, "assessment_type": "multiple-choice", "created": "2015-10-27T13:03:18Z", "prompt": {"question": "What command changes the present working directory?", "feedbacks": ["", "", "", "", ""], "answers": ["..", "pwd", "cd", "cdir", "ls"], "relatedLectureIds": ""}, "correct_response": ["c"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "What command changes the present working directory?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727452, "assessment_type": "multiple-choice", "created": "2015-10-27T13:03:51Z", "prompt": {"question": "Which command displays the built-in documentation on a Linux system?", "feedbacks": ["", "", "", ""], "answers": ["documentation", "doc", "manual", "man"], "relatedLectureIds": ""}, "correct_response": ["d"], "updated": "2015-10-27T13:05:14Z", "section": "", "question_plain": "Which command displays the built-in documentation on a Linux system?", "related_lectures": [], "original_assessment_id": 0}, {"_class": "assessment", "id": 727454, "assessment_type": "multiple-choice", "created": "2015-10-27T13:04:44Z", "prompt": {"question": "<p>Which option to the \"ls\" command will cause it to use the long listing format?</p>", "feedbacks": ["", "", ""], "answers": ["--long", "-l", "-L"], "relatedLectureIds": ""}, "correct_response": ["b"], "updated": "2015-10-27T20:41:54Z", "section": "", "question_plain": "Which option to the \"ls\" command will cause it to use the long listing format?", "related_lectures": [], "original_assessment_id": 0}]};
+
+                for (var i = 0; i < quiz.results.length; i++) {
+
+                    var question = '<font color="ff0000"><br><h3>Question-' + i + ': </h3> <b>' + quiz.results[i].prompt.question + '</b> <br>';
+
+                    for (var j = 0; j < quiz.results[i].prompt.answers.length; j++) {
+
+                        opt = opt.concat(quiz.results[i].prompt.answers[j] ? '<p style="cursor: pointer" onclick="this.style=\'font-weight: bold; color: #CE534D\'">' + n[j] + ': ' + quiz.results[i].prompt.answers[j].toString().replace(/,/g, '<br>') + '</p>' : '<br>');
+                    }
+                    var ans = quiz.results[i].correct_response ? '<p> <br> <input style="cursor: pointer" type="button" onclick="this.value=\'Answer is: ' + quiz.results[i].correct_response.toString() + '\'" value="Show Answer"></input> </p>' : '<br>';
+                    c = c.concat(question, opt, ans);
+                    opt = ''
+                    }
+                document.write(c);
+            </script>
+        </div>
+    </body>
+    </html>
